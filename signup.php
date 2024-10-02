@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the statement
     if ($stmt->execute()) {
         echo "New user created successfully";
+        header("Location: login.php");
+        exit();
     } else {
         echo "Error: " . $stmt->error;
     }
